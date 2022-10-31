@@ -1,0 +1,11 @@
+Package: SNAPSOC
+Type: Package
+Title: SNAP-SOC
+Version: 0.1.0
+Author: Stephen Wood
+Maintainer: Stephen Wood <stephen.wood@tnc.org>
+Description: Runs SNAP model
+    To estimate soil carbon under grazing
+License: MIT
+Encoding: UTF-8
+LazyData: true
