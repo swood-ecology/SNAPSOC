@@ -1,0 +1,51 @@
+---
+title: "Running SOC"
+author: "Stephen Wood"
+date: '2022-10-31'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## How to run the package
+
+BLAH BLAH
+
+```{r load}
+library(SNAPSOC)
+```
+
+## Bootstrap approach
+
+Can bootstrat
+
+```{r files}
+# Set file locations
+input_table <- "data/Input_table.csv"
+input_noprice <- "data/Input_noprice.csv"
+```
+```{r MC}
+# Run the Monte Carlo using the decisionSupport function ####
+snap(input_table = input_noprice,nsamp=10000,bootstrap = TRUE,
+     plot_vars=c('change_carbon_stocks'))
+```
+
+## CALCULATION APPROACH
+
+```{r fakedata}
+# Read in fake data of 100 observations
+fake_data <- generate_data(read_csv("data/input_data.csv"))
+```
+
+```{r sampledata}
+# Sample 100 new observations from the true data distributions
+data <- samp_data(fake_data,n=100)
+```
+
+```{r SNAP}
+# Calculate SNAP outputs
+snap(data=data)
+```
+
