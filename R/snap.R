@@ -11,12 +11,12 @@
 #'
 #' @examples \dontrun{ article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")}
 
-snap <- function(data=NA,bootstrap=FALSE,nsamp=10000,input_table=NA,plot_vars=NA,price=FALSE){
-  if(bootstrap==TRUE){
-    if(price==FALSE){
+snap <- function(data=NA,input_table=NA,nsamp=10000,plot_vars=NA){
+  if(is.na(data)){
+    if(nrow(input_table$marginal) > 8){
         mcSimulation_results <- decisionSupport::mcSimulation(
         estimate = input_table,
-        model_function = grazing_soc_noprice,
+        model_function = grazing_soc,
         numberOfModelRuns = nsamp, #run 1,000 times
         functionSyntax = "plainNames"
       )
@@ -32,10 +32,10 @@ snap <- function(data=NA,bootstrap=FALSE,nsamp=10000,input_table=NA,plot_vars=NA
       }
       return(mcSimulation_results)
     }
-    if(price==TRUE){
+    else{
         mcSimulation_results <- decisionSupport::mcSimulation(
         estimate = input_table,
-        model_function = grazing_soc,
+        model_function = grazing_soc_noprice,
         numberOfModelRuns = nsamp, #run 1,000 times
         functionSyntax = "plainNames"
       )
