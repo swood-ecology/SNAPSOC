@@ -21,7 +21,7 @@ snap <- function(data=NA,bootstrap=FALSE,nsamp=10000,input_table=NA,plot_vars=NA
       if(!is.na(plot_vars)){
         for(i in 1:length(plot_vars)){
           print(
-            plot_pls(plsr.mcSimulation(object = mcSimulation_results,
+            decisionSupport::plot_pls(decisionSupport::plsr.mcSimulation(object = mcSimulation_results,
                                        resultName = names(mcSimulation_results$y)[which(names(mcSimulation_results$y)==plot_vars[i])],
                                        ncomp = 1),
                      threshold = 0)
