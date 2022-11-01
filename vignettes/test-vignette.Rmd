@@ -1,5 +1,5 @@
 ---
-title: "Running SOC"
+title: "Running SNAP Model"
 author: "Stephen Wood"
 date: '2022-10-31'
 output: html_document
@@ -7,6 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "~/Library/CloudStorage/Box-Box/Work/The Nature Conservancy/Regional Teams/Africa/NRT Soil Carbon/SNAP")
 ```
 
 ## How to run the package
@@ -47,30 +48,33 @@ Now that you have data--whether using the package data or your own--you can run 
 
 Here is an example of the function where there is cost data and the response variable is project net present value:
 ```{r MC-cost}
-snap(input_table = input_table,nsamp=10000,
+cost <- snap(input_table = input_table,nsamp=1000,
      plot_vars=c('carbon_project_NPV'))
+head(cost$y)
 ```
 
 Here is an example of the function where there is no cost data and the response variable is changes in carbon stocks:
 ```{r MC-nocost}
-snap(input_table = input_noprice,nsamp=10000,
+nocost <- snap(input_table = input_noprice,nsamp=1000,
      plot_vars=c('change_carbon_stocks'))
+head(nocost$y)
 ```
 
 ## CALCULATION APPROACH
+Still need to do
 
 ```{r fakedata}
 # Read in fake data of 100 observations
-fake_data <- generate_data(read_csv("data/input_data.csv"))
+#fake_data <- generate_data(read_csv("data/input_data.csv"))
 ```
 
 ```{r sampledata}
 # Sample 100 new observations from the true data distributions
-data <- samp_data(fake_data,n=100)
+#data <- samp_data(fake_data,n=100)
 ```
 
 ```{r SNAP}
 # Calculate SNAP outputs
-snap(data=data)
+#snap(data=data)
 ```
 
