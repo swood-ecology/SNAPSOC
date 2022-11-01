@@ -10,28 +10,50 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## How to run the package
-
-BLAH BLAH
-
-```{r load}
+```{r load,echo=FALSE}
 library(SNAPSOC)
 ```
+Once you have the package installed and loaded (following the steps on the README) you can use internal package data to see how the main functions work.
 
 ## Bootstrap approach
+The first approach is to give the model a lower and upper estimate for each of the variables, along with the distribution type, in the model and use that to run the model based on a certain number of samples randomly drawn from those distributions.
 
-Can bootstrap
+To do this, we use the decisionSupport package to read in a data file that has the necessary information. Example data are saved within the package as a list.
+```{r data}
+input_table
+```
+
+If you would like to read in your own data, you can create your own data based on the following format:
+
+```{r data_marginal}
+input_table$marginal
+```
+
+The following variables can be excluded because they are not necessary to run the underlying SNAP model: carbon_discount_rate, price_ton_carbon, interventions_cost
+
+If you have your own custom data, you can read it in with the following commands:
 
 ```{r files}
-# Set file locations
+# Set file location
 input_table <- "data/Input_table.csv"
-input_noprice <- "data/Input_noprice.csv"
 
-decisionSupport::estimate_read_csv()
-
+# Read in data file and save it
+input_table <- decisionSupport::estimate_read_csv(input_table)
 ```
-```{r MC}
-# Run the Monte Carlo using the decisionSupport function ####
-snap(input_table = input_noprice,nsamp=10000,bootstrap = TRUE,
+
+This should save the file in the proper list format needed by the decisionSupport package.
+
+Now that you have data--whether using the package data or your own--you can run the model with the snap function. Assign the data with the input_table parameter. nsamp is the number of samples to draw from your specified distributions. The function will automatically print a variable importance plot for the variable that you choose. Your options are: change_carbon_stocks, equilibrium_soc, cashflow_carbon_stocks_NPV, carbon_project_NPV. For the last two variables to work you need to specify input values for the cost, price, and discount variables. In addition to printing a variable importance plot, the function returns the output of the simulations, which can be saved and used for other purposes.
+
+Here is an example of the function where there is cost data and the response variable is project net present value:
+```{r MC-cost}
+snap(input_table = input_table,nsamp=10000,
+     plot_vars=c('carbon_project_NPV'))
+```
+
+Here is an example of the function where there is no cost data and the response variable is changes in carbon stocks:
+```{r MC-nocost}
+snap(input_table = input_noprice,nsamp=10000,
      plot_vars=c('change_carbon_stocks'))
 ```
 
