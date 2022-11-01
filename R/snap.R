@@ -54,7 +54,7 @@ snap <- function(data=NA,input_table=NA,nsamp=10000,plot_vars=NA){
   }
   else{
     return(
-      grazing_soc(data)
+      grazing_soc_noprice(data)
     )
   }
 }

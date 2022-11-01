@@ -61,20 +61,27 @@ head(nocost$y)
 ```
 
 ## CALCULATION APPROACH
-Still need to do
+You can also use the package to run SNAP for individual data points. To demonstrate this we will create a fake data set. We will generate a fake data set of 100 observations based on the following data conditions:
 
+```{r data-conditions}
+input_data
+```
+
+The function generate_data creates a data file based on the input conditions and the number of observations you want.
 ```{r fakedata}
 # Read in fake data of 100 observations
-#fake_data <- generate_data(read_csv("data/input_data.csv"))
+fake_data <- generate_data(input_data,obs=10000)
 ```
 
+After creating the fake data, we could also choose to sample a certain number of observations from that overall data layer if we wanted to do a bootstrapping approach.
 ```{r sampledata}
 # Sample 100 new observations from the true data distributions
-#data <- samp_data(fake_data,n=100)
+data <- samp_data(fake_data,n=100)
 ```
 
+Once we have this data file, we can then calculate the SNAP model based on the given data.
 ```{r SNAP}
 # Calculate SNAP outputs
-#snap(data=data)
+snap(data=data)
 ```
 
