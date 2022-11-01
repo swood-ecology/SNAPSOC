@@ -13,10 +13,10 @@
 
 snap <- function(data=NA,bootstrap=FALSE,nsamp=10000,input_table=NA,plot_vars=NA,price=FALSE){
   if(bootstrap==TRUE){
-    if(price==TRUE){
+    if(price==FALSE){
         mcSimulation_results <- decisionSupport::mcSimulation(
         estimate = input_table,
-        model_function = grazing_soc,
+        model_function = grazing_soc_noprice,
         numberOfModelRuns = nsamp, #run 1,000 times
         functionSyntax = "plainNames"
       )
@@ -32,10 +32,10 @@ snap <- function(data=NA,bootstrap=FALSE,nsamp=10000,input_table=NA,plot_vars=NA
       }
       return(mcSimulation_results)
     }
-    else if(price==FALSE){
+    if(price==TRUE){
         mcSimulation_results <- decisionSupport::mcSimulation(
         estimate = input_table,
-        model_function = grazing_soc_noprice,
+        model_function = grazing_soc,
         numberOfModelRuns = nsamp, #run 1,000 times
         functionSyntax = "plainNames"
       )
