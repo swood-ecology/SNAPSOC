@@ -1,4 +1,11 @@
-# Generate data based on input information
+#' Generate data based on input information
+#'
+#' @param data Data input containing values for each of the associated parameters for multiple observations
+#' @param obs (numeric) Number of samples to draw for bootstrapping procedure
+#'
+#' @return data base
+#'
+#' @examples \dontrun{ article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")}
 generate_data <- function(data,obs=1000){
   mean_annual_rainfall <- rnorm(obs,
                 mean = data %>% filter(variable=='rain') %>% select('mean') %>% as.numeric(),

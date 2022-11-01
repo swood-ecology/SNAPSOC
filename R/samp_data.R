@@ -1,3 +1,12 @@
+#' Resample data
+#'
+#' @param data Data input containing values for each of the associated parameters for multiple observations
+#' @param n (numeric) Number of samples to draw for bootstrapping procedure
+#'
+#' @return data base
+#'
+#' @examples \dontrun{ article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")}
+
 samp_data <- function(data,n=10000){
   mean_annual_rainfall <- density(data$mean_annual_rainfall)
   soil_organic_cab_conc <- density(data$soil_organic_cab_conc)

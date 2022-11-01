@@ -10,7 +10,6 @@
 #' @return Output values for multiple variables
 #'
 #' @examples \dontrun{ article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")}
-
 snap <- function(data=NA,input_table=NA,nsamp=10000,plot_vars=NA){
   if(is.na(data)){
     if(nrow(input_table$marginal) > 8){
