@@ -1,5 +1,4 @@
 #' Run SNAP model
-#' Run SNAP model
 #'
 #' @param data Data input containing values for each of the associated parameters for multiple observations
 #' @param bootstrap (logical) Whether to run a bootstrapping procedure
@@ -14,7 +13,7 @@
 snap <- function(data=NA,bootstrap=FALSE,nsamp=10000,input_table=NA,plot_vars=NA){
   if(bootstrap==TRUE){
       mcSimulation_results <- decisionSupport::mcSimulation(
-        estimate = decisionSupport::estimate_read_csv(input_table),
+        estimate = input_table,
         model_function = grazing_soc,
         numberOfModelRuns = nsamp, #run 1,000 times
         functionSyntax = "plainNames"

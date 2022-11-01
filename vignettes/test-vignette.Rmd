@@ -19,12 +19,15 @@ library(SNAPSOC)
 
 ## Bootstrap approach
 
-Can bootstrat
+Can bootstrap
 
 ```{r files}
 # Set file locations
 input_table <- "data/Input_table.csv"
 input_noprice <- "data/Input_noprice.csv"
+
+decisionSupport::estimate_read_csv()
+
 ```
 ```{r MC}
 # Run the Monte Carlo using the decisionSupport function ####
