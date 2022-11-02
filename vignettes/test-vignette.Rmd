@@ -13,6 +13,7 @@ knitr::opts_knit$set(root.dir = "~/Library/CloudStorage/Box-Box/Work/The Nature 
 ## How to run the package
 ```{r load,echo=FALSE}
 library(SNAPSOC)
+library(tidyverse)
 ```
 Once you have the package installed and loaded (following the steps on the README) you can use internal package data to see how the main functions work.
 
@@ -48,15 +49,19 @@ Now that you have data--whether using the package data or your own--you can run 
 
 Here is an example of the function where there is cost data and the response variable is project net present value:
 ```{r MC-cost}
-cost <- snap(input_table = input_table,nsamp=1000,
-     plot_vars=c('carbon_project_NPV'))
+cost <- snap(
+  input_table = input_table, nsamp = 1000,
+  plot_vars = c("carbon_project_NPV")
+)
 head(cost$y)
 ```
 
 Here is an example of the function where there is no cost data and the response variable is changes in carbon stocks:
 ```{r MC-nocost}
-nocost <- snap(input_table = input_noprice,nsamp=1000,
-     plot_vars=c('change_carbon_stocks'))
+nocost <- snap(
+  input_table = input_noprice, nsamp = 1000,
+  plot_vars = c("change_carbon_stocks")
+)
 head(nocost$y)
 ```
 
@@ -70,18 +75,18 @@ input_data
 The function generate_data creates a data file based on the input conditions and the number of observations you want.
 ```{r fakedata}
 # Read in fake data of 100 observations
-fake_data <- generate_data(input_data,obs=10000)
+fake_data <- generate_data(input_data, obs = 10000)
 ```
 
 After creating the fake data, we could also choose to sample a certain number of observations from that overall data layer if we wanted to do a bootstrapping approach.
 ```{r sampledata}
 # Sample 100 new observations from the true data distributions
-data <- samp_data(fake_data,n=100)
+data <- samp_data(fake_data, n = 100)
 ```
 
 Once we have this data file, we can then calculate the SNAP model based on the given data.
 ```{r SNAP}
 # Calculate SNAP outputs
-snap(data=data)
+snap(data = data)
 ```
 
