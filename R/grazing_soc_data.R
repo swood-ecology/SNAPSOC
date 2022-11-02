@@ -1,8 +1,6 @@
 #' Equations for SNAP model
 #' @param x (data frame) Data input containing values for each of the associated parameters
-#'
 #' @return list of key variables
-#'
 #' @export
 #' @examples \dontrun{
 #' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
