@@ -8,9 +8,8 @@
 #' @examples \dontrun{
 #' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
 #' }
-generate_data <- function(data, obs = 1000) {
 library(magrittr)
-
+generate_data <- function(data, obs = 1000) {
   mean_annual_rainfall <- rnorm(obs,
     mean = data %>% filter(variable == "rain") %>% select("mean") %>% as.numeric(),
     sd = data %>% filter(variable == "rain") %>% select("sd") %>% as.numeric()

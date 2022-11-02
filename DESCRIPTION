@@ -1,17 +1,27 @@
 Package: SNAPSOC
 Type: Package
-Title: SNAP-SOC
+Title: A grassland soil carbon model
 Version: 0.1.0
-Author: Stephen Wood
+Authors@R: c(
+    person("Stephen", "Wood", , "stephen.wood@tnc.org", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-9551-8165")),
+    person("Joshua", "Wafula", ,"wafula@maraconservancies.org",role = "aut")
+           )
 Maintainer: Stephen Wood <stephen.wood@tnc.org>
-Description: Runs SNAP model
-    To estimate soil carbon under grazing
-License: MIT
+Description: A statistical model of soil carbon in grazing systems that predicts steady-state soil carbon
+     based on grazing intensity, plant chemistry, soil texture, rainfall, and fire.
+License: MIT + file LICENSE
+URL: https://github.com/swood-ecology/SNAPSOC
+BugReports: https://github.com/swood-ecology/SNAPSOC/issues
 Encoding: UTF-8
 LazyData: true
 Imports:
-    magrittr,
+    magrittr (>= 1.5),
     decisionSupport,
     readr
 Depends: 
-    R (>= 2.10)
+    R (>= 3.4.0)
+VignetteBuilder: 
+    knitr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
