@@ -10,32 +10,32 @@
 #' }
 generate_data <- function(data, obs = 1000) {
   mean_annual_rainfall <- rnorm(obs,
-    mean = as.numeric(filter(data,variable == "rain")$"mean"),
-    sd = as.numeric(filter(data,variable == "rain")$"sd")
+    mean = as.numeric(input_data[which(input_data$variable=='rain'),'mean']),
+    sd = as.numeric(input_data[which(input_data$variable=='rain'),'sd'])
   )
   sand_percentage <- rnorm(obs,
-    mean = as.numeric(filter(data,variable == "sand")$"mean"),
-    sd = as.numeric(filter(data,variable == "sand")$"sd")
+    mean = as.numeric(input_data[which(input_data$variable=='sand'),'mean']),
+    sd = as.numeric(input_data[which(input_data$variable=='sand'),'sd'])
   )
   fire_frequency <- rnorm(obs,
-    mean = as.numeric(filter(data,variable == "fire")$"mean"),
-    sd = as.numeric(filter(data,variable == "fire")$"sd")
+    mean = as.numeric(input_data[which(input_data$variable=='fire'),'mean']),
+    sd = as.numeric(input_data[which(input_data$variable=='fire'),'sd'])
   )
   lignin_and_cellulose_content <- rnorm(obs,
-    mean = as.numeric(filter(data,variable == "lignin")$"mean"),
-    sd = as.numeric(filter(data,variable == "lignin")$"sd")
+    mean = as.numeric(input_data[which(input_data$variable=='lignin'),'mean']),
+    sd = as.numeric(input_data[which(input_data$variable=='lignin'),'mean'])
   )
   soil_organic_cab_conc <- rnorm(obs,
-    mean = as.numeric(filter(data,variable == "soc")$"mean"),
-    sd = as.numeric(filter(data,variable == "soc")$"sd")
+    mean = as.numeric(input_data[which(input_data$variable=='soc'),'mean']),
+    sd = as.numeric(input_data[which(input_data$variable=='soc'),'sd'])
   )
   grazing_intensity <- rnorm(obs,
-    mean = as.numeric(filter(data,variable == "grazing")$"mean"),
-    sd = as.numeric(filter(data,variable == "grazing")$"sd")
+    mean = as.numeric(input_data[which(input_data$variable=='grazing'),'mean']),
+    sd = as.numeric(input_data[which(input_data$variable=='grazing'),'sd'])
   )
   bulk_density <- rnorm(obs,
-    mean = as.numeric(filter(data,variable == "bd")$"mean"),
-    sd = as.numeric(filter(data,variable == "bd")$"sd")
+    mean = as.numeric(input_data[which(input_data$variable=='bd'),'mean']),
+    sd = as.numeric(input_data[which(input_data$variable=='bd'),'sd'])
   )
   return(tibble(mean_annual_rainfall, sand_percentage, fire_frequency, grazing_intensity, lignin_and_cellulose_content, soil_organic_cab_conc, bulk_density))
 }
