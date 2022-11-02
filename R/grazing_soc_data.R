@@ -7,7 +7,7 @@
 #' @examples \dontrun{
 #' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
 #' }
-grazing_soc_noprice <- function(x) {
+grazing_soc_data <- function(x) {
   # Model functions as described in:
   # Ritchie ME. 2014. Plant compensation to grazing and soil carbon dynamics in a tropical grassland.
   # PeerJ 2:e233 https://doi.org/10.7717/peerj.233
