@@ -7,8 +7,6 @@
 #' @param plot_vars Which variables to include in plot of variable importance
 #' @param price (logical) Whether to include price data
 #'
-#' @import decisionSupport
-#'
 #' @return Output values for multiple variables
 #'
 #' @examples \dontrun{
