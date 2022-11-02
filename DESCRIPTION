@@ -1,6 +1,6 @@
 Package: SNAPSOC
 Type: Package
-Title: A grassland soil carbon model
+Title: A Tropical Grassland Soil Carbon Model
 Version: 0.1.0
 Authors@R: c(
     person("Stephen", "Wood", , "stephen.wood@tnc.org", role = c("aut", "cre"),
@@ -8,7 +8,7 @@ Authors@R: c(
     person("Joshua", "Wafula", ,"wafula@maraconservancies.org",role = "aut")
            )
 Maintainer: Stephen Wood <stephen.wood@tnc.org>
-Description: A statistical model of soil carbon in grazing systems that predicts steady-state soil carbon
+Description: Implementation of a statistical soil carbon model developed for tropical grasslands systems that predicts steady-state soil carbon
      based on grazing intensity, plant chemistry, soil texture, rainfall, and fire.
 License: MIT + file LICENSE
 URL: https://github.com/swood-ecology/SNAPSOC
@@ -20,12 +20,11 @@ Imports:
     dplyr,
     tibble
 Suggests:
-    testthat (>= 3.0.0),
     readr,
     knitr,
     rmarkdown
 Depends: 
-    R (>= 3.4.0)
+    R (>= 4.4.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Config/testthat/edition: 3
