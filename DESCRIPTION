@@ -16,10 +16,10 @@ BugReports: https://github.com/swood-ecology/SNAPSOC/issues
 Encoding: UTF-8
 LazyData: true
 Imports:
-    magrittr (>= 1.5),
     decisionSupport,
-    readr,
     dplyr
+Suggests:
+    readr
 Depends: 
     R (>= 3.4.0)
 VignetteBuilder: 
