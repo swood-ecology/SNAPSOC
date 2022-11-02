@@ -13,7 +13,6 @@ knitr::opts_knit$set(root.dir = "~/Library/CloudStorage/Box-Box/Work/The Nature 
 ## How to run the package
 ```{r load,echo=FALSE}
 library(SNAPSOC)
-library(tidyverse)
 ```
 Once you have the package installed and loaded (following the steps on the README) you can use internal package data to see how the main functions work.
 

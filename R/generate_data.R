@@ -5,6 +5,8 @@
 #'
 #' @return data base
 #'
+#' @import tidyverse, magrittr
+#'
 #' @examples \dontrun{
 #' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
 #' }
