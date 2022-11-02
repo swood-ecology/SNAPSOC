@@ -2,7 +2,7 @@
 % Please edit documentation in R/grazing_soc_noprice.R
 \name{grazing_soc_noprice}
 \alias{grazing_soc_noprice}
-\title{Equations for SNAP model}
+\title{Equations for SNAP model, without cost and revenue calculations}
 \usage{
 grazing_soc_noprice(x)
 }
@@ -13,5 +13,5 @@ grazing_soc_noprice(x)
 list of key variables
 }
 \description{
-Equations for SNAP model
+Equations for SNAP model, without cost and revenue calculations
 }

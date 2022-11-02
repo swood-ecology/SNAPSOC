@@ -2,7 +2,7 @@
 % Please edit documentation in R/grazing_soc_data.R
 \name{grazing_soc_data}
 \alias{grazing_soc_data}
-\title{Equations for SNAP model}
+\title{Equations for SNAP model when calculating with data}
 \usage{
 grazing_soc_data(x)
 }
@@ -13,5 +13,5 @@ grazing_soc_data(x)
 list of key variables
 }
 \description{
-Equations for SNAP model
+Equations for SNAP model when calculating with data
 }

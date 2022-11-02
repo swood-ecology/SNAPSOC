@@ -2,14 +2,14 @@
 % Please edit documentation in R/snap.R
 \name{snap}
 \alias{snap}
-\title{Run SNAP model}
+\title{Run the SNAP model}
 \usage{
 snap(data = NA, input = NA, nsamp = 10000, plot_vars = NA)
 }
 \arguments{
-\item{data}{(logical) Binary of whether data are being used}
+\item{data}{Data frame containing individual observations that can be used to calculate soil C for each observation}
 
-\item{input}{Input data to use}
+\item{input}{An alternative data source to data. This provides a lower and upper bound, and distribution type, that are sampled from in a bootstrapping procedure}
 
 \item{nsamp}{(numeric) Number of samples to draw for bootstrapping procedure}
 
@@ -19,10 +19,13 @@ snap(data = NA, input = NA, nsamp = 10000, plot_vars = NA)
 Output values for multiple variables
 }
 \description{
-Run SNAP model
+Run the SNAP model
 }
 \examples{
-\dontrun{
-article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
+{
+cost <- snap(
+  input = input_table, nsamp = 1000, plot_vars = c("carbon_project_NPV")
+)
+head(cost$y)
 }
 }

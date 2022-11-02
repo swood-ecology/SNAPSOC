@@ -2,7 +2,7 @@
 % Please edit documentation in R/grazing_soc.R
 \name{grazing_soc}
 \alias{grazing_soc}
-\title{Equations for SNAP model}
+\title{Equations for SNAP model, including cost and revenue calculations}
 \usage{
 grazing_soc(x)
 }
@@ -13,10 +13,5 @@ grazing_soc(x)
 list of key variables
 }
 \description{
-Equations for SNAP model
-}
-\examples{
-\dontrun{
-article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
-}
+Equations for SNAP model, including cost and revenue calculations
 }

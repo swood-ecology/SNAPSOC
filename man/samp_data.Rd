@@ -7,18 +7,19 @@
 samp_data(data, n = 10000)
 }
 \arguments{
-\item{data}{Data input containing values for each of the associated parameters for multiple observations}
+\item{data}{Data frame to be resampled}
 
-\item{n}{(numeric) Number of samples to draw for bootstrapping procedure}
+\item{n}{(numeric) Number of samples to draw for resampling procedure}
 }
 \value{
-data base
+Data frame to pass to the data argumen in snap()
 }
 \description{
 Resample data
 }
 \examples{
-\dontrun{
-article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
+{
+data <- samp_data(fake_data, n = 100)
+snap(data = data)
 }
 }
