@@ -37,5 +37,5 @@ generate_data <- function(data, obs = 1000) {
     mean = as.numeric(data[which(data$variable=='bd'),'mean']),
     sd = as.numeric(data[which(data$variable=='bd'),'sd'])
   )
-  return(tibble(mean_annual_rainfall, sand_percentage, fire_frequency, grazing_intensity, lignin_and_cellulose_content, soil_organic_cab_conc, bulk_density))
+  return(data_frame(mean_annual_rainfall, sand_percentage, fire_frequency, grazing_intensity, lignin_and_cellulose_content, soil_organic_cab_conc, bulk_density))
 }
