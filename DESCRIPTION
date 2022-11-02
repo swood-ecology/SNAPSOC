@@ -20,9 +20,12 @@ Imports:
     dplyr
 Suggests:
     testthat (>= 3.0.0),
-    readr
+    readr,
+    knitr,
+    rmarkdown
 Depends: 
     R (>= 3.4.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Config/testthat/edition: 3
+VignetteBuilder: knitr

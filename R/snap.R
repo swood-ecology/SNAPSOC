@@ -12,7 +12,7 @@
 #' }
 snap <- function(data = NA, input = NA, nsamp = 10000, plot_vars = NA) {
   if (is.na(data)) {
-    if (nrow(input_table$marginal) > 8) {
+    if (nrow(input$marginal) > 8) {
       mcSimulation_results <- decisionSupport::mcSimulation(
         estimate = input,
         model_function = grazing_soc,
