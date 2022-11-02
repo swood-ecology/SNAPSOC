@@ -1,23 +1,20 @@
 #' Run SNAP model
 #'
-#' @param data Data input containing values for each of the associated parameters for multiple observations
-#' @param bootstrap (logical) Whether to run a bootstrapping procedure
+#' @param data (logical) Binary of whether data are being used
 #' @param nsamp (numeric) Number of samples to draw for bootstrapping procedure
-#' @param input_table Input data to use when using single values per variable
+#' @param input Input data to use
 #' @param plot_vars Which variables to include in plot of variable importance
-#' @param price (logical) Whether to include price data
 #'
 #' @return Output values for multiple variables
 #'
 #' @examples \dontrun{
 #' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
 #' }
-snap <- function(data = NA, input_table = NA, nsamp = 10000, plot_vars = NA) {
-  if (is.null(data)) {
-    print(is.null(data))
+snap <- function(data = FALSE, input = NA, nsamp = 10000, plot_vars = NA) {
+  if (data==FALSE) {
     if (nrow(input_table$marginal) > 8) {
       mcSimulation_results <- decisionSupport::mcSimulation(
-        estimate = input_table,
+        estimate = input,
         model_function = grazing_soc,
         numberOfModelRuns = nsamp, # run 1,000 times
         functionSyntax = "plainNames"
@@ -39,7 +36,7 @@ snap <- function(data = NA, input_table = NA, nsamp = 10000, plot_vars = NA) {
       return(mcSimulation_results)
     } else {
       mcSimulation_results <- decisionSupport::mcSimulation(
-        estimate = input_table,
+        estimate = input,
         model_function = grazing_soc_noprice,
         numberOfModelRuns = nsamp, # run 1,000 times
         functionSyntax = "plainNames"
@@ -60,8 +57,7 @@ snap <- function(data = NA, input_table = NA, nsamp = 10000, plot_vars = NA) {
       }
       return(mcSimulation_results)
     }
-  } else if (!is.null(data)){
-    print(is.null(data))
+  } else if (data==TRUE){
     return(
       grazing_soc_data(data)
     )
