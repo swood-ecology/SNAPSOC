@@ -18,7 +18,8 @@ LazyData: true
 Imports:
     magrittr (>= 1.5),
     decisionSupport,
-    readr
+    readr,
+    dplyr
 Depends: 
     R (>= 3.4.0)
 VignetteBuilder: 
