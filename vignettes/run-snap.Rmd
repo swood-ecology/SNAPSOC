@@ -1,10 +1,10 @@
 ---
-title: "Running SNAP Model"
+title: "run-snap"
 author: "Stephen Wood"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{intro}
+  %\VignetteIndexEntry{run-snap}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
