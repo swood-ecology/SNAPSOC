@@ -34,7 +34,7 @@ snap <- function(data = NA, input = NA, nsamp = 10000, plot_vars = NA) {
         }
       }
       return(mcSimulation_results)
-    } else {
+    } else if (nrow(input$marginal == 8)){
       mcSimulation_results <- decisionSupport::mcSimulation(
         estimate = input,
         model_function = grazing_soc_noprice,
