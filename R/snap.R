@@ -59,7 +59,8 @@ snap <- function(data = NA, input_table = NA, nsamp = 10000, plot_vars = NA) {
       }
       return(mcSimulation_results)
     }
-  } else {
+  } else if (!is.na(data)){
+    print("test")
     return(
       grazing_soc_data(data)
     )
