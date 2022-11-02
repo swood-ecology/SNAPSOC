@@ -84,7 +84,7 @@ After creating the fake data, we could also choose to sample a certain number of
 data <- samp_data(fake_data, n = 100)
 ```
 
-Once we have this data file, we can then calculate the SNAP model based on the given data.
+Once we have this data file, we can then calculate the SNAP model based on the given data. This function returns a vector where each value corresponds to the change in carbon stocks for the corresponding row in the original data file.
 ```{r SNAP}
 # Calculate SNAP outputs
 snap(data = data)
