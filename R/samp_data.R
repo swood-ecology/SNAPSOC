@@ -1,12 +1,12 @@
 #' Resample data
 #'
-#' @param data Data input containing values for each of the associated parameters for multiple observations
-#' @param n (numeric) Number of samples to draw for bootstrapping procedure
+#' @param data Data frame to be resampled
+#' @param n (numeric) Number of samples to draw for resampling procedure
+#' @returns Data frame to pass to the data argumen in snap()
 #'
-#' @return data base
-#'
-#' @examples \dontrun{
-#' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
+#' @examples {
+#' data <- samp_data(fake_data, n = 100)
+#' snap(data = data)
 #' }
 samp_data <- function(data, n = 10000) {
   mean_annual_rainfall <- density(data$mean_annual_rainfall)

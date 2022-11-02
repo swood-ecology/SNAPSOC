@@ -1,7 +1,7 @@
-#' Equations for SNAP model
+#' Equations for SNAP model when calculating with data
+#'
 #' @param x (data frame) Data input containing values for each of the associated parameters
-#' @return list of key variables
-#' @export
+#' @returns list of key variables
 grazing_soc_data <- function(x) {
   # Model functions as described in:
   # Ritchie ME. 2014. Plant compensation to grazing and soil carbon dynamics in a tropical grassland.

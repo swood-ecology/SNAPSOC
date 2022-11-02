@@ -1,12 +1,12 @@
-#' Generate data based on input information
+#' Generate a fake data set based on information about the variables in the model
 #'
 #' @param data Data input containing values for each of the associated parameters for multiple observations
 #' @param obs (numeric) Number of samples to draw for bootstrapping procedure
+#' @returns Data frame that can be passed to the data function in snap() or resampled in the samp_data() function
 #'
-#' @return data base
-#'
-#' @examples \dontrun{
-#' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
+#' @examples {
+#' fake_data <- generate_data(input_data, obs = 10000)
+#' fake_data$fire_frequency <- rep(0,nrow(fake_data))
 #' }
 generate_data <- function(data, obs = 1000) {
   mean_annual_rainfall <- rnorm(obs,

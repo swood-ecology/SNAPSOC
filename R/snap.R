@@ -1,14 +1,16 @@
-#' Run SNAP model
+#' Run the SNAP model
 #'
-#' @param data (logical) Binary of whether data are being used
+#' @param data Data frame containing individual observations that can be used to calculate soil C for each observation
+#' @param input An alternative data source to data. This provides a lower and upper bound, and distribution type, that are sampled from in a bootstrapping procedure
 #' @param nsamp (numeric) Number of samples to draw for bootstrapping procedure
-#' @param input Input data to use
 #' @param plot_vars Which variables to include in plot of variable importance
+#' @returns Output values for multiple variables
 #'
-#' @return Output values for multiple variables
-#'
-#' @examples \dontrun{
-#' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
+#' @examples {
+#' cost <- snap(
+#'   input = input_table, nsamp = 1000, plot_vars = c("carbon_project_NPV")
+#' )
+#' head(cost$y)
 #' }
 snap <- function(data = NA, input = NA, nsamp = 10000, plot_vars = NA) {
   if (is.na(data)) {
