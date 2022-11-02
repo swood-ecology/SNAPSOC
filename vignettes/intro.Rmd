@@ -74,8 +74,6 @@ input_data
 The function generate_data creates a data file based on the input conditions and the number of observations you want.
 ```{r fakedata}
 # Read in fake data of 100 observations
-library(magrittr)
-library(dplyr)
 fake_data <- generate_data(input_data, obs = 10000)
 fake_data$fire_frequency <- rep(0,nrow(fake_data))
 ```
@@ -89,6 +87,6 @@ data <- samp_data(fake_data, n = 100)
 Once we have this data file, we can then calculate the SNAP model based on the given data.
 ```{r SNAP}
 # Calculate SNAP outputs
-snap(data = data)
+SNAPSOC::snap_data(input = data)
 ```
 
