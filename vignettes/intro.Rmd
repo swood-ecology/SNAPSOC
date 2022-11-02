@@ -87,6 +87,6 @@ data <- samp_data(fake_data, n = 100)
 Once we have this data file, we can then calculate the SNAP model based on the given data.
 ```{r SNAP}
 # Calculate SNAP outputs
-SNAPSOC::snap_data(input = data)
+snap(data = data)
 ```
 

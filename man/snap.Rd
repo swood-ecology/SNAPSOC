@@ -4,7 +4,7 @@
 \alias{snap}
 \title{Run SNAP model}
 \usage{
-snap(data = FALSE, input = NA, nsamp = 10000, plot_vars = NA)
+snap(data = NA, input = NA, nsamp = 10000, plot_vars = NA)
 }
 \arguments{
 \item{data}{(logical) Binary of whether data are being used}

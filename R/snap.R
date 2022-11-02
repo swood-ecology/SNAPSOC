@@ -10,8 +10,8 @@
 #' @examples \dontrun{
 #' article_pdf_download(infilepath = "/data/isi_searches", outfilepath = "data")
 #' }
-snap <- function(data = FALSE, input = NA, nsamp = 10000, plot_vars = NA) {
-  if (data==FALSE) {
+snap <- function(data = NA, input = NA, nsamp = 10000, plot_vars = NA) {
+  if (is.na(data)) {
     if (nrow(input_table$marginal) > 8) {
       mcSimulation_results <- decisionSupport::mcSimulation(
         estimate = input,
@@ -57,7 +57,7 @@ snap <- function(data = FALSE, input = NA, nsamp = 10000, plot_vars = NA) {
       }
       return(mcSimulation_results)
     }
-  } else if (data==TRUE){
+  } else if (!is.na(data)){
     return(
       grazing_soc_data(data)
     )
