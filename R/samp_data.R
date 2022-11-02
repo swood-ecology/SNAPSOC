@@ -60,7 +60,7 @@ samp_data <- function(data, n = 10000) {
   )$y
 
   return(
-    tibble(
+    data.frame(
       mean_annual_rainfall,
       soil_organic_cab_conc,
       bulk_density,
